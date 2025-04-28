@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { Check, Globe } from "lucide-react";
+import { Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/lib/language-context";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
