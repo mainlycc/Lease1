@@ -7,6 +7,8 @@ import { uk } from '@/translations/uk';
 
 type Language = 'pl' | 'cn' | 'ua';
 
+type TranslationValue = string | string[] | { [key: string]: TranslationValue };
+
 interface TranslationsContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
@@ -38,7 +40,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const t = (key: string): string => {
-    let translations;
+    let translations: { [key: string]: TranslationValue };
     switch (language) {
       case 'pl':
         translations = pl;
@@ -54,10 +56,10 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }
 
     const keys = key.split('.');
-    let current: any = translations;
+    let current: TranslationValue = translations;
     for (const k of keys) {
-      if (current[k] === undefined) return key;
-      current = current[k];
+      if (typeof current !== 'object' || !(k in current)) return key;
+      current = (current as { [key: string]: TranslationValue })[k];
     }
     return typeof current === 'string' ? current : key;
   };
