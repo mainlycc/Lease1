@@ -198,15 +198,15 @@ export default function Home() {
             {t('faq.title')}
           </h2>
           <div className="max-w-3xl mx-auto space-y-4 sm:space-y-6">
-            <div className="bg-gray-50 p-4 sm:p-6 rounded-lg">
+            <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md border border-gray-200 hover:border-[#2209B8] hover:shadow-lg transition-all">
               <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">{t('faq.questions.company.question')}</h3>
               <p className="text-gray-600 text-sm sm:text-base">{t('faq.questions.company.answer')}</p>
             </div>
-            <div className="bg-gray-50 p-4 sm:p-6 rounded-lg">
+            <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md border border-gray-200 hover:border-[#2209B8] hover:shadow-lg transition-all">
               <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">{t('faq.questions.documents.question')}</h3>
               <p className="text-gray-600 text-sm sm:text-base">{t('faq.questions.documents.answer')}</p>
             </div>
-            <div className="bg-gray-50 p-4 sm:p-6 rounded-lg">
+            <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md border border-gray-200 hover:border-[#2209B8] hover:shadow-lg transition-all">
               <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">{t('faq.questions.duration.question')}</h3>
               <p className="text-gray-600 text-sm sm:text-base">{t('faq.questions.duration.answer')}</p>
             </div>
