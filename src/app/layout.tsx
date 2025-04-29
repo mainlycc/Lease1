@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import "flag-icons/css/flag-icons.min.css";
 import { LanguageProvider } from "@/lib/language-context";
+import { LanguageDialog } from '@/components/ui/LanguageDialog'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <LanguageProvider>
+          <LanguageDialog />
           {children}
           <Analytics />
         </LanguageProvider>

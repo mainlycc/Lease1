@@ -1,69 +1,78 @@
 "use client";
 
-import React, { createContext, useState, useContext, ReactNode } from "react";
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import { cn } from '@/translations/cn';
+import { pl } from '@/translations/pl';
+import { uk } from '@/translations/uk';
 
-type Language = "pl" | "cn" | "ua";
+type Language = 'pl' | 'cn' | 'ua';
 
-interface LanguageContextType {
+interface TranslationsContextType {
   language: Language;
-  setLanguage: (language: Language) => void;
-  translations: Record<string, string>;
+  setLanguage: (lang: Language) => void;
+  t: (key: string) => string;
 }
 
-const defaultTranslations: Record<string, Record<string, string>> = {
-  pl: {
-    homepage: "Strona główna",
-    offers: "Oferty",
-    about: "O nas",
-    contact: "Kontakt",
-    register: "Rejestracja",
-    login: "Logowanie",
-    // Możesz dodać więcej tłumaczeń tutaj
-  },
-  cn: {
-    homepage: "首页",
-    offers: "优惠",
-    about: "关于我们",
-    contact: "联系我们",
-    register: "注册",
-    login: "登录",
-    // Możesz dodać więcej tłumaczeń tutaj
-  },
-  ua: {
-    homepage: "Головна сторінка",
-    offers: "Пропозиції",
-    about: "Про нас",
-    contact: "Контакти",
-    register: "Реєстрація",
-    login: "Увійти",
-    // Możesz dodać więcej tłumaczeń tutaj
-  },
-};
+const TranslationsContext = createContext<TranslationsContextType | undefined>(undefined);
 
-const LanguageContext = createContext<LanguageContextType | undefined>(
-  undefined
-);
+export function LanguageProvider({ children }: { children: React.ReactNode }) {
+  const [language, setLanguage] = useState<Language>('pl');
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>("pl");
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem('selectedLanguage') as Language;
+    if (savedLanguage) {
+      setLanguage(savedLanguage);
+    }
+  }, []);
 
-  const value = {
-    language,
-    setLanguage,
-    translations: defaultTranslations[language],
+  useEffect(() => {
+    const handleLanguageChange = (event: Event) => {
+      const customEvent = event as CustomEvent;
+      if (customEvent.detail) {
+        setLanguage(customEvent.detail as Language);
+      }
+    };
+
+    window.addEventListener('languageChanged', handleLanguageChange);
+    return () => window.removeEventListener('languageChanged', handleLanguageChange);
+  }, []);
+
+  const t = (key: string): string => {
+    let translations;
+    switch (language) {
+      case 'pl':
+        translations = pl;
+        break;
+      case 'cn':
+        translations = cn;
+        break;
+      case 'ua':
+        translations = uk;
+        break;
+      default:
+        return key;
+    }
+
+    const keys = key.split('.');
+    let current: any = translations;
+    for (const k of keys) {
+      if (current[k] === undefined) return key;
+      current = current[k];
+    }
+    return typeof current === 'string' ? current : key;
   };
 
   return (
-    <LanguageContext.Provider value={value}>
+    <TranslationsContext.Provider value={{ language, setLanguage, t }}>
       {children}
-    </LanguageContext.Provider>
+    </TranslationsContext.Provider>
   );
 }
 
-export function useLanguage() {
-  const context = useContext(LanguageContext);
+export function useTranslations() {
+  const context = useContext(TranslationsContext);
   if (context === undefined) {
-    throw new Error("useLanguage must be used within a LanguageProvider");
+    throw new Error('useTranslations must be used within a LanguageProvider');
   }
   return context;
 } 
