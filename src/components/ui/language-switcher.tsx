@@ -2,7 +2,7 @@
 
 import { Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useLanguage } from "@/lib/language-context";
+import { useTranslations } from "@/lib/language-context";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 interface Language {
@@ -12,7 +12,7 @@ interface Language {
 }
 
 export function LanguageSwitcher() {
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage } = useTranslations();
   
   const languages: Language[] = [
     {
