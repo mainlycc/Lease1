@@ -13,11 +13,11 @@ export function Services() {
         <div className="flex flex-col items-center mb-8 sm:mb-12">
           <div className="mb-4">
             <Image
-              src="/logo.png"
-              alt="BC Logo"
-              width={100}
-              height={100}
-              className="w-20 sm:w-24 md:w-28"
+              src="/BCtransparent.png"
+              alt="Logo Business Care Lease1"
+              width={120}
+              height={120}
+              className="w-24 sm:w-28 md:w-32"
               priority
             />
           </div>

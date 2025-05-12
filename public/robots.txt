@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lease1.pl/sitemap.xml 

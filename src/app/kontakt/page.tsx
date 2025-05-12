@@ -224,4 +224,9 @@ export default function ContactPage() {
       <Footer />
     </div>
   );
-} 
+}
+
+export const metadata = {
+  title: "Kontakt - Lease1",
+  description: "Skontaktuj się z Lease1. Odpowiemy na wszystkie pytania dotyczące leasingu, oferty i współpracy.",
+}; 

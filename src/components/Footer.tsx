@@ -12,15 +12,14 @@ export function Footer() {
       <div className="container mx-auto px-4 py-8 sm:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <div className="col-span-1 sm:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex flex-col items-start gap-2 mb-4">
               <Image
-                src="/logo.png"
-                alt="Business Care Logo"
-                width={40}
-                height={40}
-                className="w-10 sm:w-12"
+                src="/BCtransparent.png"
+                alt="Logo Business Care Lease1"
+                width={120}
+                height={120}
+                className="w-28 sm:w-32"
               />
-              <span className="text-lg sm:text-xl font-bold">Business Care</span>
             </div>
             <p className="text-gray-300 mb-4 text-sm sm:text-base">
               {t('footer.description')}

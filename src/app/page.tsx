@@ -35,7 +35,7 @@ export default function Home() {
             <div className="relative w-full max-w-sm sm:max-w-md h-48 sm:h-64 md:h-80">
               <Image
                 src="/hero.png"
-                alt={t('hero.title')}
+                alt="Lease1 - Twój globalny partner leasingowy"
                 fill
                 style={{ objectFit: 'contain' }}
                 className="transition-transform hover:scale-105"
@@ -56,7 +56,7 @@ export default function Home() {
             <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
               <Image
                 src="/tir.png"
-                alt={t('offers.machineLeasing.title')}
+                alt="Leasing maszyn - oferta Lease1"
                 width={400}
                 height={300}
                 className="w-full h-40 sm:h-48 object-cover rounded-lg mb-4"
@@ -67,7 +67,7 @@ export default function Home() {
             <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
               <Image
                 src="/fura.png"
-                alt={t('offers.carLeasing.title')}
+                alt="Leasing samochodów - oferta Lease1"
                 width={400}
                 height={300}
                 className="w-full h-40 sm:h-48 object-cover rounded-lg mb-4"
@@ -78,7 +78,7 @@ export default function Home() {
             <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
               <Image
                 src="/dom.png"
-                alt={t('offers.propertyLeasing.title')}
+                alt="Leasing nieruchomości - oferta Lease1"
                 width={400}
                 height={300}
                 className="w-full h-40 sm:h-48 object-cover rounded-lg mb-4"

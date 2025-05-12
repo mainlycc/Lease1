@@ -17,11 +17,11 @@ export function Navigation() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <Image
-                src="/logo.png"
-                alt="BC Logo"
-                width={80}
-                height={80}
-                className="w-16 sm:w-20"
+                src="/BCtransparent.png"
+                alt="Logo Business Care Lease1"
+                width={140}
+                height={140}
+                className="w-36 sm:w-40"
               />
             </Link>
           </div>
