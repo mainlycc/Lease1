@@ -1,6 +1,10 @@
-"use client";
-
 import { useState } from "react";
+
+export const metadata = {
+  title: "Kontakt - Lease1",
+  description: "Skontaktuj się z Lease1. Odpowiemy na wszystkie pytania dotyczące leasingu, oferty i współpracy."
+};
+
 import Link from "next/link";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -224,9 +228,4 @@ export default function ContactPage() {
       <Footer />
     </div>
   );
-}
-
-export const metadata = {
-  title: "Kontakt - Lease1",
-  description: "Skontaktuj się z Lease1. Odpowiemy na wszystkie pytania dotyczące leasingu, oferty i współpracy.",
-}; 
+} 
