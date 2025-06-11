@@ -47,7 +47,7 @@ export default function Home() {
       </div>
 
       {/* Leasing offers section */}
-      <div className="bg-white py-8 sm:py-12 md:py-20 px-4 sm:px-8">
+      <div id="services" className="bg-white py-8 sm:py-12 md:py-20 px-4 sm:px-8">
         <div className="container mx-auto">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12">
             {t('offers.title')}
@@ -91,7 +91,7 @@ export default function Home() {
       </div>
 
       {/* Proces leasingowy */}
-      <div className="bg-white py-8 sm:py-12 md:py-16 px-4 sm:px-8">
+      <div id="about" className="bg-white py-8 sm:py-12 md:py-16 px-4 sm:px-8">
         <div className="container mx-auto">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#2209B8] text-center mb-3 sm:mb-4">{t('process.title')}</h2>
           <p className="text-[#2209B8]/80 text-center mb-8 sm:mb-12 max-w-3xl mx-auto text-sm sm:text-base">

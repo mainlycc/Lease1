@@ -10,6 +10,13 @@ export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t } = useTranslations();
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className="bg-[#2209B8] text-white py-2 sm:py-4 px-4 sm:px-8 shadow-md sticky top-0 z-50">
       <div className="container mx-auto">
@@ -30,18 +37,24 @@ export function Navigation() {
             <Link href="/" className="hover:text-[#FFD1DC] transition-colors">
               {t('navigation.home')}
             </Link>
-            <Link href="/oferty" className="hover:text-[#FFD1DC] transition-colors">
+            <button 
+              onClick={() => scrollToSection('services')}
+              className="hover:text-[#FFD1DC] transition-colors"
+            >
               {t('navigation.offers')}
-            </Link>
-            <Link href="/o-nas" className="hover:text-[#FFD1DC] transition-colors">
+            </button>
+            <button 
+              onClick={() => scrollToSection('about')}
+              className="hover:text-[#FFD1DC] transition-colors"
+            >
               {t('navigation.about')}
-            </Link>
+            </button>
             <Link href="/kontakt" className="hover:text-[#FFD1DC] transition-colors">
               {t('navigation.contact')}
             </Link>
           </div>
 
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-4">
             <div className="hidden sm:flex items-center space-x-1">
               <button
                 onClick={() => openLanguageDialog()}
@@ -76,7 +89,7 @@ export function Navigation() {
               {t('navigation.writeToUs')}
             </Link>
 
-            <button 
+            <button
               className="md:hidden bg-[#1A07A3] hover:bg-[#15058C] p-2 rounded-md ml-2" 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
@@ -93,7 +106,7 @@ export function Navigation() {
 
         {isMenuOpen && (
           <div className="md:hidden bg-[#1A07A3] mt-4 p-4 rounded-md">
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               <li>
                 <Link 
                   href="/" 
@@ -104,22 +117,26 @@ export function Navigation() {
                 </Link>
               </li>
               <li>
-                <Link 
-                  href="/oferty" 
-                  className="block hover:text-[#FFD1DC] transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
+                <button 
+                  onClick={() => {
+                    scrollToSection('services');
+                    setIsMenuOpen(false);
+                  }}
+                  className="block w-full text-left hover:text-[#FFD1DC] transition-colors"
                 >
                   {t('navigation.offers')}
-                </Link>
+                </button>
               </li>
               <li>
-                <Link 
-                  href="/o-nas" 
-                  className="block hover:text-[#FFD1DC] transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
+                <button 
+                  onClick={() => {
+                    scrollToSection('about');
+                    setIsMenuOpen(false);
+                  }}
+                  className="block w-full text-left hover:text-[#FFD1DC] transition-colors"
                 >
                   {t('navigation.about')}
-                </Link>
+                </button>
               </li>
               <li>
                 <Link 
@@ -130,7 +147,7 @@ export function Navigation() {
                   {t('navigation.contact')}
                 </Link>
               </li>
-              <li className="pt-2">
+              <li>
                 <div className="flex items-center justify-center space-x-4">
                   <button
                     onClick={() => openLanguageDialog()}

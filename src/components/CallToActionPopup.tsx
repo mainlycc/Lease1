@@ -37,7 +37,7 @@ export const CallToActionPopup = () => {
           </div>
           
           <h3 className="text-xl font-bold mb-2">
-            Indywidualna wycena ubezpieczenia GAP
+            Idealna leasing dla Ciebie!
           </h3>
           
           <p className="text-white/80 text-sm mb-4">
