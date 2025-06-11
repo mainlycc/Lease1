@@ -29,7 +29,7 @@ export function LanguageDialog() {
     }
   }, [])
 
-  const handleLanguageSelect = (language: 'pl' | 'cn' | 'ua') => {
+  const handleLanguageSelect = (language: 'pl' | 'cn' | 'ua' | 'en') => {
     localStorage.setItem('selectedLanguage', language)
     setLanguage(language)
     // Emituj zdarzenie zmiany języka
@@ -46,13 +46,20 @@ export function LanguageDialog() {
             Wybierz język / 选择语言 / Виберіть мову
           </DialogTitle>
         </DialogHeader>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-4 gap-4">
           <button
             onClick={() => handleLanguageSelect('pl')}
             className="flex flex-col items-center p-4 rounded-lg border border-gray-200 hover:border-[#2209B8] hover:bg-gray-50 transition-all"
           >
             <span className="fi fi-pl text-5xl mb-2"></span>
             <span className="font-medium">Polski</span>
+          </button>
+          <button
+            onClick={() => handleLanguageSelect('en')}
+            className="flex flex-col items-center p-4 rounded-lg border border-gray-200 hover:border-[#2209B8] hover:bg-gray-50 transition-all"
+          >
+            <span className="fi fi-gb text-5xl mb-2"></span>
+            <span className="font-medium">English</span>
           </button>
           <button
             onClick={() => handleLanguageSelect('cn')}

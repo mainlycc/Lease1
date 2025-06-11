@@ -30,10 +30,15 @@ export function LanguageSwitcher() {
       name: "Українська",
       flag: <span className="fi fi-ua text-2xl"></span>,
     },
+    {
+      code: "en",
+      name: "English",
+      flag: <span className="fi fi-gb text-2xl"></span>,
+    },
   ];
 
   const handleLanguageChange = (langCode: string) => {
-    setLanguage(langCode as "pl" | "cn" | "ua");
+    setLanguage(langCode as "pl" | "cn" | "ua" | "en");
   };
 
   return (

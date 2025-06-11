@@ -5,6 +5,8 @@ import "./globals.css";
 import "flag-icons/css/flag-icons.min.css";
 import { LanguageProvider } from "@/lib/language-context";
 import { LanguageDialog } from '@/components/ui/LanguageDialog'
+import { CallToActionPopup } from '@/components/CallToActionPopup';
+import { Toaster } from 'sonner';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,7 +39,7 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "Lease1 Business Care",
               "url": "https://lease1.pl",
-              "logo": "https://lease1.pl/BCtransparent.png",
+              "logo": "https://lease1.pl/BC.png",
               "contactPoint": [{
                 "@type": "ContactPoint",
                 "telephone": "+48 603 086 580",
@@ -59,11 +61,11 @@ export default function RootLayout({
         <meta property="og:description" content="Najlepsze rozwiązania leasingowe dla klientów z całego świata. Szybko, bezpiecznie i na najlepszych warunkach." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://lease1.pl/" />
-        <meta property="og:image" content="https://lease1.pl/BCtransparent.png" />
+        <meta property="og:image" content="https://lease1.pl/BC.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Lease1 - Twój globalny partner w leasingu" />
         <meta name="twitter:description" content="Najlepsze rozwiązania leasingowe dla klientów z całego świata. Szybko, bezpiecznie i na najlepszych warunkach." />
-        <meta name="twitter:image" content="https://lease1.pl/BCtransparent.png" />
+        <meta name="twitter:image" content="https://lease1.pl/BC.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -71,7 +73,9 @@ export default function RootLayout({
         <LanguageProvider>
           <LanguageDialog />
           {children}
+          <CallToActionPopup />
           <Analytics />
+          <Toaster position="top-center" />
         </LanguageProvider>
       </body>
     </html>

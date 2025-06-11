@@ -17,7 +17,7 @@ export function Navigation() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <Image
-                src="/BCtransparent.png"
+                src="/BC.png"
                 alt="Logo Business Care Lease1"
                 width={140}
                 height={140}
@@ -60,6 +60,12 @@ export function Navigation() {
                 className="p-1 hover:text-[#FFD1DC] transition-colors"
               >
                 <span className="fi fi-ua text-2xl"></span>
+              </button>
+              <button
+                onClick={() => openLanguageDialog()}
+                className="p-1 hover:text-[#FFD1DC] transition-colors"
+              >
+                <span className="fi fi-gb text-2xl"></span>
               </button>
             </div>
 
@@ -143,6 +149,12 @@ export function Navigation() {
                     className="p-1 hover:text-[#FFD1DC] transition-colors"
                   >
                     <span className="fi fi-ua text-2xl"></span>
+                  </button>
+                  <button
+                    onClick={() => openLanguageDialog()}
+                    className="p-1 hover:text-[#FFD1DC] transition-colors"
+                  >
+                    <span className="fi fi-gb text-2xl"></span>
                   </button>
                 </div>
               </li>

@@ -7,8 +7,8 @@ export const pl = {
     writeToUs: 'Napisz do nas',
   },
   hero: {
-    title: 'Twój globalny partner leasingowy',
-    subtitle: 'Najlepsze rozwiązania leasingowe dla klientów na całym świecie. Szybko, bezpiecznie i na najkorzystniejszych warunkach.',
+    title: 'Twój ulubiony partner leasingowy',
+    subtitle: 'Najlepsze rozwiązania leasingowe dla klientów z całego świata. Szybko, uczciwie a także na najkorzystniejszych warunkach.',
     checkOffer: 'Sprawdź ofertę',
     contactAdvisor: 'Kontakt z doradcą',
   },
