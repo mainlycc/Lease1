@@ -4,8 +4,9 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { cn } from '@/translations/cn';
 import { pl } from '@/translations/pl';
 import { uk } from '@/translations/uk';
+import { en } from '@/translations/en';
 
-type Language = 'pl' | 'cn' | 'ua';
+type Language = 'pl' | 'cn' | 'ua' | 'en';
 
 type TranslationValue = string | string[] | { [key: string]: TranslationValue };
 
@@ -50,6 +51,9 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         break;
       case 'ua':
         translations = uk;
+        break;
+      case 'en':
+        translations = en;
         break;
       default:
         return key;
