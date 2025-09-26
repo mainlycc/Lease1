@@ -147,7 +147,7 @@ export const pl = {
       },
       phone: {
         label: 'Telefon',
-        value: '+48 603 086 580',
+        value: '+48 796 148 577',
       },
       address: {
         label: 'Adres',

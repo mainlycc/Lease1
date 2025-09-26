@@ -148,7 +148,7 @@ export const uk = {
       },
       phone: {
         label: 'Телефон',
-        value: '+48 603 086 580',
+        value: '+48 796 148 577',
       },
       address: {
         label: 'Адреса',

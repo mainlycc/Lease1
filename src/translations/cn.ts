@@ -147,7 +147,7 @@ export const cn = {
       },
       phone: {
         label: '电话',
-        value: '+48 603 086 580',
+        value: '+48 796 148 577',
       },
       address: {
         label: '地址',

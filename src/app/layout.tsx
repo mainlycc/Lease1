@@ -42,7 +42,7 @@ export default function RootLayout({
               "logo": "https://lease1.pl/BC.png",
               "contactPoint": [{
                 "@type": "ContactPoint",
-                "telephone": "+48 603 086 580",
+                "telephone": "+48 796 148 577",
                 "contactType": "customer service",
                 "areaServed": "PL",
                 "availableLanguage": ["Polish", "English", "Ukrainian", "Chinese"]

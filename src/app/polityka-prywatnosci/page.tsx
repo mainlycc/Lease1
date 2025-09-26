@@ -18,7 +18,7 @@ export default function PolitykaPrywatnosciPage() {
             ul. Przyszłości 6, 05‑140 Skubianka<br />
             NIP: 5361933707<br />
             E-mail: biuro@lease1.pl<br />
-            Tel: +48 603 086 580
+            Tel: +48 796 148 577
           </p>
 
           <h2 className="text-2xl font-semibold mb-4">§2. Zakres zbieranych danych</h2>
